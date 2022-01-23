@@ -2,8 +2,12 @@ const path = require("path")
 const fs = require("fs")
 const sass = require("sass")
 
+function write(filePath, destPath) {
+	const result = sass.compile(filePath)
+	fs.writeFileSync(destPath, result.css)
+}
+
 module.exports = async function (options) {
-	const dirpath = path.join(__dirname, "./scss")
 	try {
 		let { src, dest } = options
 		if (!src && !dest) throw new Error("src and dest are required")
@@ -22,11 +26,15 @@ module.exports = async function (options) {
 		}
 
 		fileNames.forEach(fileName => {
-			let filePath = path.join(dirpath, fileName)
-			const result = sass.compile(filePath)
 			const baseName = path.basename(fileName, path.extname(fileName))
 			let destPath = path.join(dest, baseName + ".css")
-			fs.writeFileSync(destPath, result.css)
+			let filePath = path.join(src, fileName)
+
+			write(filePath, destPath)
+			fs.watchFile(filePath, (curr, prev) => {
+				write(filePath, destPath)
+				console.log(fileName, " changed")
+			})
 		})
 		return true
 	} catch (error) {
