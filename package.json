@@ -1,6 +1,6 @@
 {
   "name": "sass-ware",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is a middleware for express to take in scss/sass files and push out css files.",
   "main": "index.js",
   "scripts": {
