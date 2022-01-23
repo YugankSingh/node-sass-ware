@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  overflow: auto;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  word-wrap: break-word;
+  cursor: url("../images/cursor.png") 3 3, auto;
+}
+body a {
+  position: relative;
+}
+body a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+body a:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+body a:hover {
+  cursor: pointer;
+}
+body a:link {
+  color: blue;
+}
+body a:visited {
+  color: indigo;
+}
+body .cursor {
+  width: 20px;
+  height: 25px;
+}
+body .google-logo {
+  width: 2.3em;
+  height: 2.3em;
+}
+body .invisible {
+  display: none;
+}
+body #layout-main {
+  min-height: 100vh;
+}

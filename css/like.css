@@ -1,0 +1,22 @@
+.like-toggle {
+  transition: background-color 250ms linear;
+  padding: 2px calc(1ex + 4px);
+  margin: 2px;
+  color: var(--text-color);
+  border: var(--background-color) 2px solid;
+  background-color: var(--background-color);
+  display: inline-block;
+}
+.like-toggle.unlike {
+  --text-color: white;
+  --background-color: #f85f5f;
+}
+.like-toggle.like {
+  content: "&#9829";
+  --text-color: rgb(248, 95, 95);
+  --background-color: rgba(255, 255, 255, 0);
+}
+.like-toggle:active {
+  color: var(--text-color);
+  border: var(--text-color) 2px solid;
+}

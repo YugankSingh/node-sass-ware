@@ -1,0 +1,51 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #218F76;
+  padding: 7px;
+}
+header a {
+  text-decoration: none;
+}
+header a:link {
+  color: white;
+}
+header a:visited {
+  color: white;
+}
+header ul {
+  font-weight: 600;
+  display: flex;
+  padding-inline-start: 0;
+  margin: 0px 10px;
+}
+header ul li {
+  margin: auto;
+  margin-right: 12px;
+  text-decoration: none;
+  list-style: none;
+}
+header p {
+  margin: 4px;
+}
+header p a {
+  margin-left: 12px;
+  font-weight: 900;
+  color: #ffffff;
+  text-decoration: none;
+}
+header #logo-container > a {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+header #logo-container > a * {
+  margin: 3px;
+  font-size: 20px;
+}
+header .logo {
+  height: 40px;
+  width: 40px;
+}
