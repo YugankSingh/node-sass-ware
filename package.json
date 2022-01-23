@@ -4,7 +4,7 @@
   "description": "This is a middleware for express to take in scss/sass files and push out css files.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon test.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
   "homepage": "https://github.com/YugankSingh/node-sass-ware#readme",
   "dependencies": {
     "sass": "^1.49.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
